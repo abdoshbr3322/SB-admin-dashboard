@@ -1,0 +1,35 @@
+@use './helpers/globals' as *;
+@use './helpers/mixins' as *;
+@use './helpers/placeholders' as *;
+
+:root {
+  --text-gray-50: #b7b9cc;
+  --text-gray-30: #858796;
+  --sb-primary-color: #4e73df;
+  --sb-border-color: #e3e6f0;
+}
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+img,
+video,
+canvas {
+  max-width: 100%;
+}
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+input,
+select,
+option,
+textarea,
+button {
+  border: none;
+  outline: none;
+}

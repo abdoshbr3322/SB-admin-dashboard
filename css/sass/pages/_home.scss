@@ -1,0 +1,14 @@
+@use "../helpers/globals" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/placeholders" as *;
+@use "../components/btns";
+
+.illustrations {
+  a {
+    color: #4e73df;
+    &:hover {
+      color: #224aeb;
+      text-decoration: underline;
+    }
+  }
+}

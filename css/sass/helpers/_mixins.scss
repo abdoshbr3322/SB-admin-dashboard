@@ -1,0 +1,116 @@
+@use "./globals" as *;
+
+@mixin width-media-query($minOrMax, $screen, $width) {
+  @media (#{$minOrMax}-width: $screen) {
+    width: $width;
+  }
+}
+
+/// Media Query
+@mixin media-query($minOrmax, $screen) {
+  @media (#{$minOrmax}-width: $screen) {
+    @content;
+  }
+}
+
+/// Breakpoints
+@mixin breakpoint($screen) {
+  @if $screen == "small-mobile" {
+    @media (max-width: 575px) {
+      @content;
+    }
+  } @else if $screen == "mobile" {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $screen == "medium" {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $screen == "large" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+/// this mixin to create circles
+@mixin circle($dimentions) {
+  width: $dimentions;
+  height: $dimentions;
+  border-radius: 50%;
+}
+@mixin position-style(
+  $position,
+  $top: null,
+  $left: null,
+  $bottom: null,
+  $right: null
+) {
+  position: $position;
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}
+
+/// this mixin to create test style
+@mixin text-style(
+  $font-size: null,
+  $font-weight: null,
+  $color: null,
+  $line-height: null
+) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+  line-height: $line-height;
+}
+
+/// this mixin to create margin
+@mixin margin-style(
+  $shorthand,
+  $top: null,
+  $left: null,
+  $bottom: null,
+  $right: null
+) {
+  margin: $shorthand {
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+  }
+}
+
+/// make flex more easier to use
+@mixin flex($justify-content, $align-items: null, $flex-flow: null) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-flow: $flex-flow;
+}
+
+@mixin animation($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin prefixer($property , $value ,$prefixes) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+  #{$property}: $value;
+}
+
+@mixin overlay($opacity ,$background) {
+  @include position-style(absolute, 0, 0);
+  width: 100%;
+  height: 100%;
+  opacity: $opacity;
+  background-color: $background;
+}

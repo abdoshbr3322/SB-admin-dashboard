@@ -1,0 +1,24 @@
+@use "./globals" as *;
+@use "./mixins" as *;
+
+// this placeholder to center the element
+$center-dirs: (
+  "v" "top" translateY(-50%),
+  "h" "left" translateX(-50%),
+  "b" ("top", "left") translate(-50%, -50%)
+);
+@each $center-dir, $dirs, $transform in $center-dirs {
+  %el-centered-#{$center-dir} {
+    position: absolute;
+    @each $dir in $dirs {
+      #{$dir}: 50%;
+    }
+    transform: $transform;
+  }
+}
+%main-color {
+  color: var(--main-color);
+}
+%section-padding {
+  padding: 120px 0;
+}

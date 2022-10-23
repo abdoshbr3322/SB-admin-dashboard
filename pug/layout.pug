@@ -1,0 +1,28 @@
+block links
+include ./mixins
+doctype
+html
+  head
+    block head
+      meta(charset='UTF-8')
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      include ./includes/styles
+      title
+        block pageTitle
+          | Untitled
+  body
+    block body
+      .container-fluid
+        .wrapper.row.flex-nowrap
+          include ./includes/nav
+          .main.col.flex-grow-1.p-0
+            include ./includes/header
+            .root.p-4.pb-5
+              block content
+            block footer
+              include ./includes/footer
+      .scroll-top.text-white
+        i.fas.fa-angle-up
+    block scripts
+      include ./includes/scripts

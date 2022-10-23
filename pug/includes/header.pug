@@ -1,0 +1,82 @@
+header.bg-white.px-4.d-flex.align-items-center.position-relative
+  div.nav-mobile-toggler.me-auto.me-sm-3.d-block.d-md-none
+    button.btn.btn-link.circle.circle-40.text-primary-sb: i.fas.fa-bars
+  form.me-auto.input-group.d-none.d-sm-flex
+    input(type='text', id='search', placeholder='Search for...').form-control.border-0.bg-light
+    button.btn.btn-primary.btn-primary-sb: i.fas.fa-search
+  .dropdown.search.grow.d-flex.d-sm-none
+    button(data-bs-toggle='dropdown').bg-transparent
+      i.fas.fa-search
+    .dropdown-menu.p-3
+      form.d-flex.input-group
+        input(type='text', id='search', placeholder='Search for...').flex-grow-1.form-control.border-0.bg-light
+        button.btn.btn-primary.btn-primary-sb: i.fas.fa-search
+  .dropdown.notification.grow.alerts.ms-4.me-4
+    button(data-bs-toggle='dropdown').bg-transparent
+      i.fas.fa-bell.position-relative
+        span(style='--bs-badge-font-size: 7px;').p-1.position-absolute.top-0.start-100.translate-middle.badge.rounded.bg-danger 3+
+    .dropdown-menu.p-0.shadow-sm.overflow-hidden
+      .dropdown-header.text-uppercase.px-4.border-primary-sb.text-bg-primary-sb.fw-bold
+        | Alerts Center
+      a(href='#').d-flex.align-items-center.py-2.px-4.border-bottom
+        .image.flex-shrink-0.bg-primary-sb.circle.circle-40.d-flex.justify-content-center.align-items-center.me-4
+          i.fas.fa-file-alt.text-white
+        .info
+          span.d-block.date.mb-1.text-gray-50 December 12, 2022
+          p.title.lh-sm.fw-bold.m-0 A new monthly report is ready to download!
+      a(href='#').d-flex.align-items-center.py-2.px-4.border-bottom
+        .image.flex-shrink-0.bg-success.circle.circle-40.d-flex.justify-content-center.align-items-center.me-4
+          i.fas.fa-donate.text-white
+        .info
+          span.d-block.date.mb-1.text-gray-50 December 12, 2022
+          p.title.lh-sm.m-0 A new monthly report is ready to download!
+      a(href='#').d-flex.align-items-center.py-2.px-4.border-bottom
+        .image.flex-shrink-0.bg-warning.circle.circle-40.d-flex.justify-content-center.align-items-center.me-4
+          i.fas.fa-exclamation-triangle.text-white
+        .info
+          span.d-block.date.mb-1.text-gray-50 December 12, 2022
+          p.title.lh-sm.m-0 A new monthly report is ready to download!
+      a(href='#').d-block.dropdown-foot.text-center.text-gray-50.py-2
+        | Show All Alerts
+  .dropdown.notification.grow.messages.me-4
+    button(data-bs-toggle='dropdown').bg-transparent
+      i.fas.fa-envelope.position-relative
+        span(style='--bs-badge-font-size: 7px;').p-1.position-absolute.top-0.start-100.translate-middle.badge.rounded.bg-danger 7
+    .dropdown-menu.p-0.shadow-sm.overflow-hidden
+      .dropdown-header.text-uppercase.px-4.border-primary.text-bg-primary.fw-bold
+        | Message Center
+      a(href='#').d-flex.align-items-center.py-2.px-4.border-bottom
+        .image.flex-shrink-0.me-4
+          img.circle.circle-40(src='./imgs/undraw_profile_1.svg')
+        .info.overflow-hidden
+          p(style='max-width: 100%;').title.text-truncate.lh-sm.fw-bold.m-0 Hi There! Could you please tell me if i can use your computer
+          span.d-block.date.mt-1.text-gray-50 Abdo sayed - 58m
+      a(href='#').d-flex.align-items-center.py-2.px-4.border-bottom
+        .image.flex-shrink-0.me-4
+          img.circle.circle-40(src='./imgs/undraw_profile_2.svg')
+        .info.overflow-hidden
+          p(style='max-width: 100%;').title.text-truncate.lh-sm.m-0 But you told me that i can use it
+          span.d-block.date.mt-1.text-gray-50 Abdo sayed - 58m
+      a(href='#').d-flex.align-items-center.py-2.px-4.border-bottom
+        .image.flex-shrink-0.me-4
+          img.circle.circle-40(src='./imgs/undraw_profile_3.svg')
+        .info.overflow-hidden
+          p(style='max-width: 100%;').title.text-truncate.lh-sm.m-0 Ok, thank you! i'll take it.
+          span.d-block.date.mt-1.text-gray-50 Abdo sayed - 58m
+      a(href='#').d-block.dropdown-foot.text-center.text-gray-50.py-2
+        | Read All Messages
+  .vr.me-4.d-none.d-sm-block.my-2(style='color: #858796;')
+  .dropdown.profile.grow
+    button(data-bs-toggle='dropdown').bg-transparent.no-arrow.d-flex.align-items-center
+      span.name.d-none.d-lg-inline.text-gray-30.fs-sm Abdullah SH
+      img(src='./imgs/undraw_profile.svg').avatar
+    ul.dropdown-menu
+      li.dropdown-item
+        a(href='#').d-block.dropdown-link #[i.fas.fa-user.fa-sm] Profile
+      li.dropdown-item
+        a(href='#').d-block.dropdown-link #[i.fas.fa-cogs.fa-sm] Settings
+      li.dropdown-item
+        a(href='#').d-block.dropdown-link #[i.fas.fa-list.fa-sm] Activity Log
+      .dropdown-divider
+      li.dropdown-item
+        a(href='#').d-block.dropdown-link #[i.fa.fa-sign-out-alt.fa-sm] Logout

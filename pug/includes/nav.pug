@@ -1,0 +1,84 @@
+//- A mixin for creating nav items
+mixin navItem(divider, content, link, linkClass, iconClass)
+  li&attributes({class: divider ? 'divider' : false}).item
+    a.d-inline-block.link.fs-md.px-0.py-3&attributes({href: link, class: linkClass})
+      span #[i(class=iconClass).me-2]  #{content}
+
+//- A mixin for creating accordion nav items
+mixin accordionItem(divider, content, collapseId, iconClass, parentId, collapseItems)
+  li&attributes({class: divider ? 'divider' : false}).item.menu
+    a&attributes({
+      'data-bs-toggle': 'collapse',
+      'href': '#' + collapseId
+      }).menu-opener.collapsed.link.fs-md.px-0.py-3.d-flex.justify-content-between.align-items-center
+      span #[i(class=iconClass).me-2]  #{content}
+      i.fas.fa-angle-right.arrow
+    div(id=collapseId, data-bs-parent='#' + parentId).nested-menu.collapse.rounded.mb-3
+      ul.p-2.nav.flex-column
+        each item in collapseItems
+          - if (item.type === 'title')
+            li: span.d-block.py-2.px-3.menu-title.fw-bold= item.content
+          - else
+            li: a.d-block.py-2.px-3.rounded.menu-link.fs-md(href=item.href)= item.content
+mixin subHeading(content)
+  h6.sub-heading.text-uppercase.pt-3.m-0.mb-1.text-white-50.fw-bold= content
+
+ul(id='accordion-nav').nav.accordion.flex-direction-column.flex-grow-0.flex-column.py-2.px-3.bg-gradient-primary
+  li.logo.divider
+    a(href=`${home}`).text-light.d-flex.align-items-center.py-3.pb-4.px-3
+      i.fas.fa-laugh-wink.fa-2xl.me-3
+      h1.fw-bold.fs-6.m-0 SB ADMIN #[sup 2]
+
+  +navItem(true, 'Dahsboard', home, 'active', 'fas fa-fw fa-tachometer-alt')
+  +subHeading('Interface')
+  +accordionItem(
+    false,
+    'Components',
+    'components',
+    'fas fa-fw fa-cog',
+    'accordion-nav',
+    [
+      {type: 'title' ,content: 'CUSTOM COMPONENTS:'},
+      {type: 'link' ,content: 'Buttons', href: buttons},
+      {type: 'link' ,content: 'Cards', href: cards},
+    ]
+  )
+  +accordionItem(
+    true,
+    'Utilities',
+    'utilities',
+    'fas fa-fw fa-wrench',
+    'accordion-nav',
+    [
+      {type: 'title' ,content: 'Custom Utilities:'},
+      {type: 'link' ,content: 'Colors', href: colors},
+      {type: 'link' ,content: 'Borders', href: borders},
+      {type: 'link' ,content: 'Animations', href: animations},
+      {type: 'link' ,content: 'Others', href: others}
+    ]
+  )
+  +subHeading('ADDONS')
+  +accordionItem(
+    false,
+    'Pages',
+    'pages',
+    'fas fa-fw fa-folder',
+    'accordion-nav',
+    [
+      {type: 'title' ,content: 'LOGIN SCREENS:'},
+      {type: 'link' ,content: 'Login', href: login},
+      {type: 'link' ,content: 'Register', href: Register},
+      {type: 'link' ,content: 'Forgot Password', href: forgot_password},
+      {type: 'title' ,content: 'Other pages:'},
+      {type: 'link' ,content: '404 Page', href: error_page},
+      {type: 'link' ,content: 'Blank Page', href: blank},
+    ]
+  )
+  +navItem(false, 'Charts', charts, false, 'fas fa-fw fa-chart-area')
+  +navItem(true, 'Tables', tables, false, 'fas fa-fw fa-table')
+  div.nav-desktop-toggler.mt-3.text-center.d-none.d-md-block
+    button: i.fas.fa-angle-left
+  .upgrade.px-2.py-3.mt-3.rounded.text-center
+    div.rocket.mx-auto.mb-2: img(src='./imgs/undraw_rocket.svg')
+    p.text.mb-2.text-white-50.fw-bold SB Admin Pro is packed with premium features, components, and more!
+    a(href="#").btn.btn-sm.btn-success.upgrade-btn Upgrade To PRO
