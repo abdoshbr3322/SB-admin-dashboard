@@ -1,0 +1,112 @@
+extends ../pug/layout
+block pageTitle
+  | Bootstrap Dahsboard | Cards
+block paths
+  -
+    let home = '../';
+    let buttons= '../buttons/';
+    let cards= '#';
+    let colors = '../colors/';
+    let borders = '../borders/';
+    let animations = '../animations/';
+    let others = '../others/';
+    let login = '../login/';
+    let rigister = '../rigister/';
+    let forgot_password = '../forgot_password/';
+    let error_page = '../error/';
+    let blank = '../blank/';
+    let charts = '../charts/';
+    let tables = '../tables/';
+    let imgs = '../imgs/';
+    let js = '../js/';
+block content
+  .mb-4
+    +primary-heading('Cards')
+  .cards.row.gy-4.gx-4.mb-4
+    .col-md-6.col-xl-3
+      .card.border-primary-sb.shadow-sb.p-4(style='border: none; border-left: 4px solid')
+        .card-body.p-0.d-flex.justify-content-between.align-items-center
+          .info
+            span.title.fs-xsm.d-block.text-primary-sb.text-uppercase.fw-bold EARNINGS (MONTHLY)
+            span.number.d-block.fw-bold $40,000
+          .icon
+            i.fas.fa-calendar.fa-2x(style='color: #dddfeb;')
+    .col-md-6.col-xl-3
+      .card.border-success.shadow-sb.p-4(style='border: none; border-left: 4px solid')
+        .card-body.p-0.d-flex.justify-content-between.align-items-center
+          .info
+            span.title.fs-xsm.d-block.text-success.text-uppercase.fw-bold EARNINGS (ANNUAL)
+            span.number.d-block.fw-bold $215,000
+          .icon
+            i.fas.fa-dollar-sign.fa-2x(style='color: #dddfeb;')
+    .col-md-6.col-xl-3
+      .card.border-info.shadow-sb.p-4(style='border: none; border-left: 4px solid')
+        .card-body.p-0.d-flex.align-items-center
+          .info
+            span.title.fs-xsm.d-block.text-info.text-uppercase.fw-bold Tasks
+            span.number.d-block.fw-bold 50%
+          .progress.mx-3.flex-grow-1(style='height: 9px;')
+            .progress-bar.w-50.bg-info(
+              role="progressbar",
+              aria-label="Basic example",
+              aria-valuenow="0",
+              aria-valuemin="0",
+              aria-valuemax="100"
+            )
+          .icon
+            i.fas.fa-clipboard-list.fa-2x(style='color: #dddfeb;')
+    .col-md-6.col-xl-3
+      .card.border-warning.shadow-sb.p-4(style='border: none; border-left: 4px solid')
+        .card-body.p-0.d-flex.justify-content-between.align-items-center
+          .info
+            span.title.fs-xsm.d-block.text-warning.text-uppercase.fw-bold Pending Requests
+            span.number.d-block.fw-bold 18
+          .icon
+            i.fas.fa-comments.fa-2x(style='color: #dddfeb;')
+  
+  .row
+    .col-lg-6
+      .default.mb-4.card.card-sb.w-100
+        .card-header.py-3
+          h6.fw-bold.text-black-50.m-0.card-title Default Card Example
+        .card-body.px-4.py-3
+          p.info.m-0
+            | This card uses Bootstrap's default styling with no utility classes added.
+            | Global styles are the only things modifying the look and feel of this default card example.
+      .basic.mb-4.card.card-sb.w-100.shadow-sb
+        .card-header.py-3
+          h6.fw-bold.text-primary-sb.m-0.card-title Basic Card Example
+        .card-body.px-4.py-3
+          p.info.m-0
+            | The styling for this basic card example is created by using default Bootstrap utility classes. 
+            | By using utility classes, the style of the card component can be easily modified with no need for any custom CSS!
+    .col-lg-6
+      .dr-down.mb-4.card.card-sb.w-100.shadow-sb
+        .card-header.py-3.d-flex.justify-content-between.align-items-center
+          h6.fw-bold.text-primary-sb.m-0.card-title Dropdown Card Example
+          .dropdown
+            button(data-bs-toggle='dropdown').bg-transparent.text-gray-50: i.fas.fa-ellipsis-v
+            ul.dropdown-menu(style="border-color: var(--sb-border-color) !important;")
+              h6.dropdown-header.fs-xsm.text-uppercase.text-gray-50 Dropdown Header:
+              a(href='#').dropdown-item Action
+              a(href='#').dropdown-item Another Action
+              hr.dropdown-divider(style="border-color: var(--sb-border-color) !important;")
+              a(href='#').dropdown-item Somethin else here
+        .card-body.px-4.py-3
+          p.info.m-0
+            | Dropdown menus can be placed in the card header in order to extend the functionality of a basic card.
+            | In this dropdown card example, the Font Awesome vertical ellipsis icon in the card header can be clicked on in order to toggle a dropdown menu
+      
+      .clpse.mb-4.card.card-sb.w-100.shadow-sb
+        button.card-header.py-3.d-flex.justify-content-between.align-items-center(
+          data-bs-toggle='collapse',
+          data-bs-target='#card-collapse'
+        )
+          h6.fw-bold.text-primary-sb.m-0.card-title Dropdown Card Example
+          i.fas.fa-angle-down.text-gray-50
+        #card-collapse.card-body.px-4.py-3
+          p.info.m-0 This is a collapsable card example using Bootstrap's built in collapse functionality.
+            | #[strong Click on the card header] to see the card body collapse and expand!
+          
+
+

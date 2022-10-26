@@ -1,2 +1,15 @@
 mixin primary-heading(content)
   h3.primary-heading= content
+
+mixin brand-btn(brandName, text, display)
+  .btn.text-center.text-white(
+    class='btn-' + brandName,
+    style='display: ' + (display || 'block')
+  )
+    i.fab.me-2(class='fa-' + brandName)
+    span= text
+
+mixin split-btn(text, iconClass, eClass)
+  button.btn.btn-icon-split.p-0(class=eClass)
+    i.icon.text-white-50.d-inline-flex.align-items-center(class=iconClass)
+    span.text.text-white.d-inline-flex.align-items-center= text

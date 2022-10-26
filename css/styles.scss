@@ -1,6 +1,6 @@
-@use './sass/helpers/globals';
-@use './sass/helpers/mixins';
-@use './sass/helpers/placeholders';
+@use './sass/helpers/globals' as *;
+@use './sass/helpers/mixins' as *;
+@use './sass/helpers/placeholders' as *;
 @use './sass/rules';
 @use './sass/components/btns';
 @use './sass/components/heading';

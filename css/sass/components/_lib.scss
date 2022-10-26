@@ -26,8 +26,8 @@
 
 // colors:
 
-  // make classes from defined variable colors
-$colors: ('text-gray-50' ,'text-gray-30');
+// make classes from defined variable colors
+$colors: ("text-gray-50", "text-gray-30");
 @each $color in $colors {
   .#{$color} {
     color: var(--#{$color});
@@ -35,10 +35,54 @@ $colors: ('text-gray-50' ,'text-gray-30');
 }
 
 // font-size
-$sizes: ('xsm': 11.2px, 'sm': 12.8px, 'md': 13.6px);
+$sizes: (
+  "xsm": 11.2px,
+  "sm": 12.8px,
+  "md": 13.6px,
+);
 @each $class, $size in $sizes {
   .fs-#{$class} {
     font-size: $size;
+  }
+}
+
+// brands btns
+$brands: (
+  ("google", "#ea4335", "#e12717"),
+  ("facebook", "#3b5998", "#30497c")
+);
+
+@each $name, $color, $hover-color in $brands {
+  .btn-#{$name} {
+    background-color: #{$color} !important;
+    border-color: #{$color} !important;
+    &:hover {
+      background-color: #{$hover-color} !important;
+      border-color: #{$hover-color} !important;
+    }
+  }
+}
+
+// btns
+.btn-icon-split {
+  .icon, .text {
+    height: 36px;
+    padding: 0 12px;
+  }
+  .icon {
+    background-color: rgba(0 0 0 / 12%);
+  }
+  &.btn-sm {
+    .icon, .text {
+    height: 30px;
+    padding: 0 8px;
+  }
+  }
+  &.btn-lg {
+    .icon, .text {
+    height: 46px;
+    padding: 0 14px;
+  }
   }
 }
 
@@ -52,7 +96,8 @@ $sizes: ('xsm': 11.2px, 'sm': 12.8px, 'md': 13.6px);
 .text-bg-primary-sb {
   color: #fff;
 }
-.btn-primary-sb ,.border-primary-sb {
+.btn-primary-sb,
+.border-primary-sb {
   border-color: var(--sb-primary-color) !important;
 }
 .text-primary-sb {
@@ -62,7 +107,7 @@ $sizes: ('xsm': 11.2px, 'sm': 12.8px, 'md': 13.6px);
 // grow dropdowns
 .dropdown.grow {
   .dropdown-menu.show {
-    animation: grow .2s ease-in-out forwards;
+    animation: grow 0.2s ease-in-out forwards;
   }
 }
 

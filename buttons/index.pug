@@ -1,0 +1,95 @@
+extends ../pug/layout
+block pageTitle
+  | Bootstrap Dahsboard | Buttons
+block paths
+  -
+    let home = '../';
+    let buttons= '#';
+    let cards= '../cards/';
+    let colors = '../colors/';
+    let borders = '../borders/';
+    let animations = '../animations/';
+    let others = '../others/';
+    let login = '../login/';
+    let rigister = '../rigister/';
+    let forgot_password = '../forgot_password/';
+    let error_page = '../error/';
+    let blank = '../blank/';
+    let charts = '../charts/';
+    let tables = '../tables/';
+    let imgs = '../imgs/';
+    let js = '../js/';
+block content
+  .mb-3
+    +primary-heading('Buttons')
+  .row.g-4
+    .col-lg-6
+      .circle-btns.card.card-sb.w-100.shadow-sb.mb-4
+        .card-header.py-3
+          h6.fw-bold.text-primary-sb.m-0.card-title Circle Buttons
+        .card-body.p4
+          p.info.mb-2
+            | Use Font Awesome Icons (included with this theme package) along with the circle buttons as shown in the examples below!
+          pre.code.mb-2 .btn .circle
+          .btns.d-flex.align-items-center.mb-4
+            button.btn.btn-primary.circle.me-1.d-flex.justify-content-center.align-items-center.text-white: i.fab.fa-facebook-f
+            button.btn.btn-success.circle.me-1.d-flex.justify-content-center.align-items-center.text-white: i.fas.fa-check
+            button.btn.btn-info.circle.me-1.d-flex.justify-content-center.align-items-center.text-white: i.fas.fa-info-circle
+            button.btn.btn-warning.circle.me-1.d-flex.justify-content-center.align-items-center.text-white: i.fas.fa-exclamation-triangle
+            button.btn.btn-danger.circle.d-flex.justify-content-center.align-items-center.text-white: i.fas.fa-trash
+          
+          pre.code.mb-2 .btn .circle .btn-sm .circle-30
+          .btns.d-flex.align-items-center.mb-4
+            button.btn.btn-primary.btn-sm.circle.circle-30.me-1.d-flex.justify-content-center.align-items-center.text-white: i.fab.fa-facebook-f
+            button.btn.btn-success.btn-sm.circle.circle-30.me-1.d-flex.justify-content-center.align-items-center.text-white: i.fas.fa-check
+            button.btn.btn-info.btn-sm.circle.circle-30.me-1.d-flex.justify-content-center.align-items-center.text-white: i.fas.fa-info-circle
+            button.btn.btn-warning.btn-sm.circle.circle-30.me-1.d-flex.justify-content-center.align-items-center.text-white: i.fas.fa-exclamation-triangle
+            button.btn.btn-danger.btn-sm.circle.circle-30.d-flex.justify-content-center.align-items-center.text-white: i.fas.fa-trash
+          
+          pre.code.mb-2 .btn .circle .btn-lg .circle-50
+          .btns.d-flex.align-items-center
+            button.btn.btn-primary.btn-lg.circle.circle-50.me-1.d-flex.justify-content-center.align-items-center.text-white: i.fab.fa-facebook-f
+            button.btn.btn-success.btn-lg.circle.circle-50.me-1.d-flex.justify-content-center.align-items-center.text-white: i.fas.fa-check
+            button.btn.btn-info.btn-lg.circle.circle-50.me-1.d-flex.justify-content-center.align-items-center.text-white: i.fas.fa-info-circle
+            button.btn.btn-warning.btn-lg.circle.circle-50.me-1.d-flex.justify-content-center.align-items-center.text-white: i.fas.fa-exclamation-triangle
+            button.btn.btn-danger.btn-lg.circle.circle-50.d-flex.justify-content-center.align-items-center.text-white: i.fas.fa-trash
+
+      .brand-brtns.card.card-sb.w-100.shadow-sb
+        .card-header.py-3
+          h6.fw-bold.text-primary-sb.m-0.card-title Brand Buttons
+        .card-body.p4
+          p.info 
+            |Google and Facebook buttons are available featuring each company's respective brand color.
+            | They are used on the user login and registration pages.
+          P.info.mb-4 You can create more custom buttons by adding a new color variable in the 
+            | #[span.code _variables.scss] file and then using the Bootstrap button variant mixin to create a new style, as demonstrated in the 
+            | #[span.code _buttons.scss] file.
+          .mb-3
+            +brand-btn('google', '.btn-google')
+          +brand-btn('facebook', '.btn-facebook')
+    .col-lg-6
+      .split-btns.card.card-sb.w-100.shadow-sb
+        .card-header.py-3
+          h6.fw-bold.text-primary-sb.m-0.card-title Split Buttons with Icon
+        .card-body.p-4
+          p.info.mb-3 Works with any button colors, just use the #[span.code .btn-icon-split] class and the markup in the examples below. 
+            | The examples below also use the #[span.code .text-white-50] helper class on the icons for additional styling, but it is not required.
+          
+          div.mb-2
+            +split-btn('Split Button Primary', 'fas fa-flag', 'btn-primary btn-primary-sb')
+          div.mb-2
+            +split-btn('Split Button Success', 'fas fa-check', 'btn-success')
+          div.mb-2
+            +split-btn('Split Button Info', 'fas fa-info-circle', 'btn-info')
+          div.mb-2
+            +split-btn('Split Button Warning', 'fas fa-exclamation-triangle', 'btn-warning')
+          div.mb-2
+            +split-btn('Split Button Danger', 'fas fa-trash', 'btn-danger')
+          div.mb-2
+            +split-btn('Split Button Secondary', 'fas fa-arrow-right', 'btn-secondary')
+          div.mb-2
+            p.info.my-2 Also works with small and large button classes!
+          div.mb-2
+            +split-btn('Split Button Small', 'fas fa-flag', 'btn-primary btn-primary-sb btn-sm')
+          div
+            +split-btn('Split Button Large', 'fas fa-flag', 'btn-primary btn-primary-sb btn-lg')

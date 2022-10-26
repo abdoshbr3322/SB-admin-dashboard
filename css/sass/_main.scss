@@ -25,6 +25,13 @@
     opacity: 1;
   }
 }
+.code {
+  color: var(--code-color);
+}
+span.code {
+  font-size: .875em;
+  font-family: var(--bs-font-monospace);
+}
 .wrapper > .main {
   background-color: #f8f9fc;
   .cards {

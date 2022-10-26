@@ -47,19 +47,19 @@ header.bg-white.px-4.d-flex.align-items-center.position-relative
         | Message Center
       a(href='#').d-flex.align-items-center.py-2.px-4.border-bottom
         .image.flex-shrink-0.me-4
-          img.circle.circle-40(src='./imgs/undraw_profile_1.svg')
+          img.circle.circle-40(src= (imgs || './imgs/') + 'undraw_profile_1.svg')
         .info.overflow-hidden
           p(style='max-width: 100%;').title.text-truncate.lh-sm.fw-bold.m-0 Hi There! Could you please tell me if i can use your computer
           span.d-block.date.mt-1.text-gray-50 Abdo sayed - 58m
       a(href='#').d-flex.align-items-center.py-2.px-4.border-bottom
         .image.flex-shrink-0.me-4
-          img.circle.circle-40(src='./imgs/undraw_profile_2.svg')
+          img.circle.circle-40(src= (imgs || './imgs/') + 'undraw_profile_2.svg')
         .info.overflow-hidden
           p(style='max-width: 100%;').title.text-truncate.lh-sm.m-0 But you told me that i can use it
           span.d-block.date.mt-1.text-gray-50 Abdo sayed - 58m
       a(href='#').d-flex.align-items-center.py-2.px-4.border-bottom
         .image.flex-shrink-0.me-4
-          img.circle.circle-40(src='./imgs/undraw_profile_3.svg')
+          img.circle.circle-40(src= (imgs || './imgs/') + 'undraw_profile_3.svg')
         .info.overflow-hidden
           p(style='max-width: 100%;').title.text-truncate.lh-sm.m-0 Ok, thank you! i'll take it.
           span.d-block.date.mt-1.text-gray-50 Abdo sayed - 58m
@@ -69,7 +69,7 @@ header.bg-white.px-4.d-flex.align-items-center.position-relative
   .dropdown.profile.grow
     button(data-bs-toggle='dropdown').bg-transparent.no-arrow.d-flex.align-items-center
       span.name.d-none.d-lg-inline.text-gray-30.fs-sm Abdullah SH
-      img(src='./imgs/undraw_profile.svg').avatar
+      img(src= (imgs || './imgs/') + 'undraw_profile.svg').avatar
     ul.dropdown-menu
       li.dropdown-item
         a(href='#').d-block.dropdown-link #[i.fas.fa-user.fa-sm] Profile
