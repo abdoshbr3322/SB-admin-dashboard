@@ -1,0 +1,82 @@
+@use "../helpers/globals" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/placeholders" as *;
+// Bg colors
+$gradient-colors: (
+  'gradient-primary',
+  'gradient-secondary',
+  'gradient-success',
+  'gradient-info',
+  'gradient-warning',
+  'gradient-danger',
+  'gradient-light',
+  'gradient-dark',
+);
+@each $color in $gradient-colors {
+  .bg-#{$color} {
+    background-image: var(--#{$color});
+  }
+}
+
+// componenets
+.circle {
+  --circle-dimension: 40px;
+  @include circle(var(--circle-dimension));
+}
+@for $i from 1 to 10 {
+  $coordinate: $i * 10;
+  .circle-#{$coordinate} {
+    --circle-dimension: #{$coordinate}px;
+  }
+}
+
+// links
+a.sb-link {
+  color: #4e73df;
+  &:hover {
+    color: #224aeb;
+    text-decoration: underline;
+  }
+}
+
+// customize bootstrap classes as sb
+
+.bg-primary-sb,
+.text-bg-primary-sb,
+.btn-primary-sb {
+  background-color: var(--sb-primary-color);
+}
+.text-bg-primary-sb {
+  color: #fff;
+}
+.btn-primary-sb,
+.border-primary-sb {
+  border-color: var(--sb-primary-color) !important;
+}
+.text-primary-sb {
+  color: var(--sb-primary-color);
+}
+
+// grow dropdowns
+.dropdown.grow {
+  .dropdown-menu.show {
+    animation: grow 0.2s ease-in-out forwards;
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// create shadows
+
+.shadow-sb {
+  box-shadow: 0 0 23px 0 rgba(0 0 0 / 12%);
+}

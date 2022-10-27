@@ -1,0 +1,18 @@
+@use "../helpers/globals" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/placeholders" as *;
+
+// Cards
+
+.card-sb {
+  &,
+  .card-header {
+    border-color: var(--sb-border-color) !important;
+  }
+  .card-header {
+    background-color: #f8f9fc;
+  }
+  .info {
+    color: var(--info-color);
+  }
+}

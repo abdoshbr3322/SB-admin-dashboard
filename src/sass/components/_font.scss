@@ -1,0 +1,35 @@
+// colors:
+
+// make classes from defined variable colors
+$colors: (
+  "gray-10",
+  "gray-20",
+  "gray-30",
+  "gray-40",
+  "gray-50",
+  "gray-60",
+  "gray-70",
+  "gray-80",
+  "gray-90",
+);
+@each $color in $colors {
+  .#{'text-'}#{$color} {
+    color: var(--#{$color});
+  }
+  .#{'bg-'}#{$color} {
+    background-color: var(--#{$color});
+  }
+}
+
+// font-size
+$sizes: (
+  "xsm": 11.2px,
+  "sm": 12.8px,
+  "md": 13.6px,
+  "lg": 19.2px,
+);
+@each $class, $size in $sizes {
+  .fs-#{$class} {
+    font-size: $size;
+  }
+}

@@ -1,0 +1,83 @@
+extends ../../layout
+block pageTitle
+  | Bootstrap Dahsboard | Cards
+block paths
+  -
+    let home = '../';
+    let buttons= '../buttons/';
+    let cards= '../cards/';
+    let colors = '#';
+    let borders = '../borders/';
+    let animations = '../animations/';
+    let others = '../others/';
+    let login = '../login/';
+    let rigister = '../rigister/';
+    let forgot_password = '../forgot_password/';
+    let error_page = '../error/';
+    let blank = '../blank/';
+    let charts = '../charts/';
+    let tables = '../tables/';
+    let imgs = '../imgs/';
+    let js = '../js/';
+    let css = '../css/';
+block content
+  .mb-4
+    +primary-heading('Color Utilities')
+    p.text-gray-60.mt-2(style='color: var(--info-color)')
+      | Bootstrap's default utility classes can be found on the official 
+      | #[a.sb-link(href='https://getbootstrap.com/docs') Bootstrap Documentation] page.
+      | The custom utilities below were created to extend this theme past the default utility classes built into Bootstrap's framework.
+  .row
+    .col-lg-4
+      .mb-4.card.card-sb.w-100.shadow-sb
+        .card-header.py-3
+          h6.fw-bold.text-primary-sb.m-0.card-title Custom Text Color Utilities
+        .card-body.p-3
+          .bg-gray-80.text-gray-10.p-3 .text-gray-10
+          .bg-gray-80.text-gray-20.p-3 .text-gray-20
+          .bg-gray-80.text-gray-30.p-3 .text-gray-30
+          .bg-gray-80.text-gray-40.p-3 .text-gray-40
+          .bg-white.text-gray-50.p-3 .text-gray-50
+          .bg-white.text-gray-60.p-3 .text-gray-60
+          .bg-white.text-gray-70.p-3 .text-gray-70
+          .bg-white.text-gray-80.p-3 .text-gray-80
+          .bg-white.text-gray-90.p-3 .text-gray-90
+      .mb-4.card.card-sb.w-100.shadow-sb
+        .card-header.py-3
+          h6.fw-bold.text-primary-sb.m-0.card-title Custom Font Size Utilities
+        .card-body.p-3
+          p.fs-xsm.mb-4.info .fs-xsm
+          p.fs-lg.m-0.info .fs-lg
+    .col-lg-4
+      .mb-4.card.card-sb.w-100.shadow-sb
+        .card-header.py-3
+          h6.fw-bold.text-primary-sb.m-0.card-title Custom Background Gradient Utilities
+        .card-body.p-3
+          - 
+            const colorClasses = [
+              'primary',
+              'secondary',
+              'success',
+              'info',
+              'warning',
+              'danger',
+              'light',
+              'dark',
+            ] 
+          each colorClass in colorClasses
+            .px-3.py-5.text-white(class='bg-gradient-' + colorClass) .bg-gradient-#{colorClass}
+    
+    .col-lg-4
+      .mb-4.card.card-sb.w-100.shadow-sb
+        .card-header.py-3
+          h6.fw-bold.text-primary-sb.m-0.card-title Custom Background Gradient Utilities
+        .card-body.p-3
+          .text-gray-60.bg-gray-10.p-3 .text-gray-10
+          .text-gray-60.bg-gray-20.p-3 .text-gray-20
+          .text-gray-60.bg-gray-30.p-3 .text-gray-30
+          .text-gray-60.bg-gray-40.p-3 .text-gray-40
+          .text-white.bg-gray-50.p-3 .text-gray-50
+          .text-white.bg-gray-60.p-3 .text-gray-60
+          .text-white.bg-gray-70.p-3 .text-gray-70
+          .text-white.bg-gray-80.p-3 .text-gray-80
+          .text-white.bg-gray-90.p-3 .text-gray-90

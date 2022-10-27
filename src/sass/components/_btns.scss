@@ -1,0 +1,43 @@
+@use "../helpers/globals" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/placeholders" as *;
+
+// btns
+.btn-icon-split {
+  .icon,
+  .text {
+    height: 36px;
+    padding: 0 12px;
+  }
+  .icon {
+    background-color: rgba(0 0 0 / 12%);
+  }
+  &.btn-sm {
+    .icon,
+    .text {
+      height: 30px;
+      padding: 0 8px;
+    }
+  }
+  &.btn-lg {
+    .icon,
+    .text {
+      height: 46px;
+      padding: 0 14px;
+    }
+  }
+}
+
+// brands btns
+$brands: (("google", "#ea4335", "#e12717"), ("facebook", "#3b5998", "#30497c"));
+
+@each $name, $color, $hover-color in $brands {
+  .btn-#{$name} {
+    background-color: #{$color} !important;
+    border-color: #{$color} !important;
+    &:hover {
+      background-color: #{$hover-color} !important;
+      border-color: #{$hover-color} !important;
+    }
+  }
+}

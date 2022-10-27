@@ -1,0 +1,42 @@
+@use "./helpers/globals" as *;
+@use "./helpers/mixins" as *;
+@use "./helpers/placeholders" as *;
+
+.scroll-top {
+  @include position-style(fixed, null, null, 8px, 16px);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 13px 18px;
+  background-color: rgba(90, 92, 105, 0.5);
+  display: none;
+  &:hover {
+    background-color: #5a5c69;
+  }
+  &.show {
+    display: inline-block;
+    animation: show-btn $main-transition ease-out forwards;
+  }
+}
+@include animation("show-btn") {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.code {
+  color: var(--code-color);
+}
+span.code {
+  font-size: .875em;
+  font-family: var(--bs-font-monospace);
+}
+.wrapper > .main {
+  background-color: #f8f9fc;
+  .cards {
+    .card span.number {
+      @include text-style(20px, null, #5a5c69);
+    }
+  }
+}
