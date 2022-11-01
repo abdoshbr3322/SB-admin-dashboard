@@ -1,4 +1,5 @@
 block paths
+block vars
 include ./includes/mixins
 doctype
 html
@@ -7,7 +8,8 @@ html
       meta(charset='UTF-8')
       meta(http-equiv="X-UA-Compatible", content="IE=edge")
       meta(name="viewport", content="width=device-width, initial-scale=1.0")
-      include ./includes/styles
+      block styles
+        include ./includes/styles
       title
         block pageTitle
           | Untitled
@@ -16,9 +18,9 @@ html
       .container-fluid
         .wrapper.row.flex-nowrap
           include ./includes/nav
-          .main.col.flex-grow-1.p-0
+          .main.col.flex-grow-1.p-0.position-relative
             include ./includes/header
-            .root.p-4.pb-4
+            .root.p-4
               block content
             block footer
               include ./includes/footer

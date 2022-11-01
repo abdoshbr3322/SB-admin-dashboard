@@ -1,0 +1,77 @@
+extends ../../layout
+block pageTitle
+  | Bootstrap Dahsboard | Buttons
+block paths
+  -
+    let home = '../';
+    let buttons= '../buttons/';
+    let cards= '../cards/';
+    let colors = '../colors/';
+    let borders = '../borders/';
+    let animations = '../animations/';
+    let others = '#';
+    let login = '../login/';
+    let rigister = '../rigister/';
+    let forgot_password = '../forgot_password/';
+    let error_page = '../error/';
+    let blank = '../blank/';
+    let charts = '../charts/';
+    let tables = '../tables/';
+    let imgs = '../imgs/';
+    let js = '../js/';
+    let css = '../css/';
+
+append vars
+  - 
+    parentActive = 'utilities';
+    childActive = 'others';
+    
+block content
+  .mb-4
+    +primary-heading('Other Utilities')
+    p.text-gray-60.mt-2
+      | Bootstrap's default utility classes can be found on the official 
+      | #[a.sb-link(href='https://getbootstrap.com/docs') Bootstrap Documentation] page.
+      | The custom utilities below were created to extend this theme past the default utility classes built into Bootstrap's framework.
+  .row.g-4
+    .col.lg-6
+      .card.card-sb.w-100.mb-4
+        .card-header.py-3
+          h6.fw-bold.text-primary-sb.m-0.card-title Overflow Hidden Utilty
+        .card-body.px-4.py-3
+          p.info.m-0 Use #[span.code .o-hidden] to set the overflow property of any element to hidden. 
+
+      .card.card-sb.w-100.mb-4
+        .card-header.py-3
+          h6.fw-bold.text-primary-sb.m-0.card-title Progress Small Utility
+        .card-body.px-4.py-3
+          p.label.text-gray-60.fs-md.m-0.mb-1 Normal Progress Bar
+          .progress.mb-3
+            .progress-bar.bg-primary-sb.w-75
+
+          p.label.text-gray-60.fs-md.m-0.mb-1 Small Progress Bar
+          .progress.mb-3(style='height: 8px;')
+            .progress-bar.bg-primary-sb.w-75
+          p.info.m-0 Use the #[span.code .progress-sm] class along with #[span.code .progress]
+
+      .card.card-sb.w-100.mb-4
+        .card-header.py-3
+          h6.fw-bold.text-primary-sb.m-0.card-title Dropdown - No Arrow
+        .card-body.px-4.py-3
+          .dropdown.mb-3
+            button.dropdown-toggler.no-arrow.btn.btn-secondary(data-bs-toggle='dropdown') Dropdown (no arrow)
+            ul.dropdown-menu.sb-menu
+              li: a.dropdown-item(href='#') Action
+              li: a.dropdown-item(href='#') Another Action
+              li: a.dropdown-item(href='#') Something else
+          p.info.m-0 Add the #[span.code .no-arrow] class alongside the #[span.code .dropdown]
+    .col.lg-6
+      .card.card-sb.w-100.mb-4
+        .card-header.py-3
+          h6.fw-bold.text-primary-sb.m-0.card-title Rotation Utilities
+        .card-body.px-4.py-3
+          .py-4.d-flex.justify-content-center
+            .p-3.text-bg-primary-sb(style='transform: rotate(15deg)') .rotate-15
+          hr.text-gray-60
+          .py-4.d-flex.justify-content-center
+            .p-3.text-bg-primary-sb(style='transform: rotate(-15deg)') .rotate-n-15

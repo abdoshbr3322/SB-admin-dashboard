@@ -67,10 +67,10 @@ header.bg-white.px-4.d-flex.align-items-center.position-relative
         | Read All Messages
   .vr.me-4.d-none.d-sm-block.my-2(style='color: #858796;')
   .dropdown.profile.grow
-    button(data-bs-toggle='dropdown').bg-transparent.no-arrow.d-flex.align-items-center
+    button(data-bs-toggle='dropdown').bg-transparent.d-flex.align-items-center
       span.name.d-none.d-lg-inline.text-gray-60.fs-sm Abdullah SH
       img(src= (imgs || './imgs/') + 'undraw_profile.svg').avatar
-    ul.dropdown-menu
+    ul.dropdown-menu.sb-menu
       li.dropdown-item
         a(href='#').d-block.dropdown-link #[i.fas.fa-user.fa-sm] Profile
       li.dropdown-item

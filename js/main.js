@@ -21,7 +21,7 @@ function hideNav(e) {
   nav.classList.toggle("hidden");
 }
 
-// toggle nav on mobiles
+// toggle nav on small screens
 
 window.addEventListener("resize", toggleMobileNav);
 toggleMobileNav();
@@ -37,18 +37,20 @@ function toggleMobileNav() {
 }
 
 // Scroll Top button
-const scrollTop = document.querySelector('.scroll-top');
-let showScrollBtn = () => 
-  window.scrollY >= 350 ? scrollTop.classList.add('show') : scrollTop.classList.remove('show');
+const scrollTop = document.querySelector(".scroll-top");
+let showScrollBtn = () =>
+  window.scrollY >= 350
+    ? scrollTop.classList.add("show")
+    : scrollTop.classList.remove("show");
 
 // show and hide scroll button
-window.addEventListener('scroll', showScrollBtn);
+window.addEventListener("scroll", showScrollBtn);
 showScrollBtn();
 
 // handle button function
-scrollTop.addEventListener('click', () => {
+scrollTop.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
-    behavour: 'smooth',
-  })
+    behavour: "smooth",
+  });
 });

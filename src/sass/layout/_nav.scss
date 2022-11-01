@@ -45,10 +45,6 @@
       &.active i {
         color: #fff;
       }
-      // hide the dropdown arrow
-      &.menu-opener::after {
-        display: none;
-      }
       &.menu-opener i.arrow {
         @include text-style(12px, null, rgba(255, 255, 255, 0.5));
       }
@@ -68,6 +64,9 @@
         color: #3a3b45;
         &:hover {
           background-color: #eaecf4;
+        }
+        &.active {
+          @include text-style(null, 700, var(--sb-primary-color));
         }
       }
     }

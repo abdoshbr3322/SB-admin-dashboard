@@ -20,10 +20,16 @@ block paths
     let imgs = '../imgs/';
     let js = '../js/';
     let css = '../css/';
+
+append vars
+  -   
+    parentActive = 'utilities';
+    childActive = 'colors';
+    
 block content
   .mb-4
     +primary-heading('Color Utilities')
-    p.text-gray-60.mt-2(style='color: var(--info-color)')
+    p.text-gray-60.mt-2
       | Bootstrap's default utility classes can be found on the official 
       | #[a.sb-link(href='https://getbootstrap.com/docs') Bootstrap Documentation] page.
       | The custom utilities below were created to extend this theme past the default utility classes built into Bootstrap's framework.

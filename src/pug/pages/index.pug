@@ -1,4 +1,7 @@
 extends ../layout
+append styles
+  link(rel="stylesheet", href='./css/pages/home.css')
+
 block pageTitle
   | Bootstrap Dahsboard
 block paths
@@ -17,6 +20,9 @@ block paths
     let blank = './blank/';
     let charts = './charts/';
     let tables = './tables/';
+
+append vars
+  - const active = 'home';
 block content
   .d-flex.justify-content-between.align-items-center.mb-3
     +primary-heading('Dashboard')

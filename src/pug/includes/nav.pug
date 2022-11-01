@@ -1,15 +1,18 @@
 //- A mixin for creating nav items
-mixin navItem(divider, content, link, linkClass, iconClass)
+mixin navItem(divider, content, id, link, iconClass)
   li&attributes({class: divider ? 'divider' : false}).item
-    a.d-inline-block.link.fs-md.px-0.py-3&attributes({href: link, class: linkClass})
+    a.d-inline-block.link.fs-md.px-0.py-3&attributes({href: link, class: (id === active ? 'active' : false)})
       span #[i(class=iconClass).me-2]  #{content}
 
 //- A mixin for creating accordion nav items
 mixin accordionItem(divider, content, collapseId, iconClass, parentId, collapseItems)
-  li&attributes({class: divider ? 'divider' : false}).item.menu
+  li&attributes({
+    class: (divider ? 'divider' : false)
+  }).item.menu
     a&attributes({
       'data-bs-toggle': 'collapse',
-      'href': '#' + collapseId
+      'href': '#' + collapseId,
+      'class': (collapseId === parentActive ? 'active' : false)
       }).menu-opener.collapsed.link.fs-md.px-0.py-3.d-flex.justify-content-between.align-items-center
       span #[i(class=iconClass).me-2]  #{content}
       i.fas.fa-angle-right.arrow
@@ -19,7 +22,10 @@ mixin accordionItem(divider, content, collapseId, iconClass, parentId, collapseI
           - if (item.type === 'title')
             li: span.d-block.py-2.px-3.menu-title.fw-bold= item.content
           - else
-            li: a.d-block.py-2.px-3.rounded.menu-link.fs-md(href=item.href)= item.content
+            li: a.d-block.py-2.px-3.rounded.menu-link.fs-md&attributes({
+              href: item.href,
+              class: (item.id === childActive ? 'active' : false)
+            })= item.content
 mixin subHeading(content)
   h6.sub-heading.text-uppercase.pt-3.m-0.mb-1.text-white-50.fw-bold= content
 
@@ -29,7 +35,7 @@ ul(id='accordion-nav').nav.accordion.flex-direction-column.flex-grow-0.flex-colu
       i.fas.fa-laugh-wink.fa-2xl.me-3
       h1.fw-bold.fs-6.m-0 SB ADMIN #[sup 2]
 
-  +navItem(true, 'Dahsboard', home, 'active', 'fas fa-fw fa-tachometer-alt')
+  +navItem(true, 'Dahsboard', 'home', home, 'fas fa-fw fa-tachometer-alt')
   +subHeading('Interface')
   +accordionItem(
     false,
@@ -39,8 +45,8 @@ ul(id='accordion-nav').nav.accordion.flex-direction-column.flex-grow-0.flex-colu
     'accordion-nav',
     [
       {type: 'title' ,content: 'CUSTOM COMPONENTS:'},
-      {type: 'link' ,content: 'Buttons', href: buttons},
-      {type: 'link' ,content: 'Cards', href: cards},
+      {type: 'link' ,content: 'Buttons', href: buttons, id: 'buttons'},
+      {type: 'link' ,content: 'Cards', href: cards, id: 'cards'},
     ]
   )
   +accordionItem(
@@ -51,10 +57,10 @@ ul(id='accordion-nav').nav.accordion.flex-direction-column.flex-grow-0.flex-colu
     'accordion-nav',
     [
       {type: 'title' ,content: 'Custom Utilities:'},
-      {type: 'link' ,content: 'Colors', href: colors},
-      {type: 'link' ,content: 'Borders', href: borders},
-      {type: 'link' ,content: 'Animations', href: animations},
-      {type: 'link' ,content: 'Others', href: others}
+      {type: 'link' ,content: 'Colors', href: colors, id: 'colors'},
+      {type: 'link' ,content: 'Borders', href: borders, id: 'borders'},
+      {type: 'link' ,content: 'Animations', href: animations, id: 'animations'},
+      {type: 'link' ,content: 'Others', href: others, id: 'others'}
     ]
   )
   +subHeading('ADDONS')
@@ -66,19 +72,20 @@ ul(id='accordion-nav').nav.accordion.flex-direction-column.flex-grow-0.flex-colu
     'accordion-nav',
     [
       {type: 'title' ,content: 'LOGIN SCREENS:'},
-      {type: 'link' ,content: 'Login', href: login},
-      {type: 'link' ,content: 'Register', href: Register},
-      {type: 'link' ,content: 'Forgot Password', href: forgot_password},
+      {type: 'link' ,content: 'Login', href: login, id: 'login'},
+      {type: 'link' ,content: 'Register', href: register, id: 'register'},
+      {type: 'link' ,content: 'Forgot Password', href: forgot_password, id: 'forgot_password'},
       {type: 'title' ,content: 'Other pages:'},
-      {type: 'link' ,content: '404 Page', href: error_page},
-      {type: 'link' ,content: 'Blank Page', href: blank},
+      {type: 'link' ,content: '404 Page', href: error_page, id: 'error_page'},
+      {type: 'link' ,content: 'Blank Page', href: blank, id: 'blank'},
     ]
   )
-  +navItem(false, 'Charts', charts, false, 'fas fa-fw fa-chart-area')
-  +navItem(true, 'Tables', tables, false, 'fas fa-fw fa-table')
+  +navItem(false, 'Charts', 'charts', charts, 'fas fa-fw fa-chart-area')
+  +navItem(true, 'Tables', 'tables', tables, 'fas fa-fw fa-table')
   div.nav-desktop-toggler.mt-3.text-center.d-none.d-md-block
     button: i.fas.fa-angle-left
-  .upgrade.px-2.py-3.mt-3.rounded.text-center
+  //- hide this upgrade section in all pages except home page
+  .upgrade.px-2.py-3.mt-3.rounded.text-center.d-none
     div.rocket.mx-auto.mb-2: img(src= (imgs || './imgs/') + 'undraw_rocket.svg')
     p.text.mb-2.text-white-50.fw-bold SB Admin Pro is packed with premium features, components, and more!
     a(href="#").btn.btn-sm.btn-success.upgrade-btn Upgrade To PRO
