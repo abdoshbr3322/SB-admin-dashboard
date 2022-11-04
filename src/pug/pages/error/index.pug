@@ -1,0 +1,35 @@
+extends ../../layout
+block pageTitle
+  | Bootstrap Dahsboard | Buttons
+block paths
+  -
+    let home = '../';
+    let buttons= '../buttons/';
+    let cards= '../cards/';
+    let colors = '../colors/';
+    let borders = '../borders/';
+    let animations = '../animations/';
+    let others = '#';
+    let login = '../login/';
+    let rigister = '../rigister/';
+    let forgot_password = '../forgot_password/';
+    let error_page = '../error/';
+    let blank = '../blank/';
+    let charts = '../charts/';
+    let tables = '../tables/';
+    let imgs = '../imgs/';
+    let js = '../js/';
+    let css = '../css/';
+
+append vars
+  - 
+    parentActive = 'pages';
+    childActive = 'error';
+    
+block content
+  .text-center
+    h1.mb-0.error 404
+    p.m-0.mb-5.fs-lg.text-gray-70 Page Not Found
+    p.m-0.text-gray-50 It looks like you found a glitch in the matrix...
+    a.sb-link(href='../') ← Back To Dahsboard
+

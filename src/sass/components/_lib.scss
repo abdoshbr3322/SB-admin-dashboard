@@ -33,6 +33,7 @@ $gradient-colors: (
 // links
 a.sb-link {
   color: #4e73df;
+  // text-decoration: none;
   &:hover {
     color: #224aeb;
     text-decoration: underline;
@@ -120,4 +121,39 @@ a.sb-link {
 // hide the dropdown arrow
 .dropdown .dropdown-toggler.no-arrow::after {
   display: none;
+}
+
+.error {
+  position: relative;
+  @include text-style(7rem, null, var(--gray-80));
+  &::before ,&::after {
+    content: '404';
+    position: absolute;
+    top: 0;
+  }
+  &::before {
+    left: -10px;
+    animation: matrix-1 0.2s infinite;
+    clip-path: inset(0px 300px 0px 0px);
+  }
+  &::after {
+    right: -10px;
+    animation: matrix-2 0.2s infinite;
+    clip-path: inset(0px 0px 300px 0px);
+  }
+}
+
+@include animation('matrix-1') {
+  0% {
+    clip-path: inset(0px 0px 300px 0px);
+  }
+  10% {
+    clip-path: inset(10px 0px 50px 0px);
+  }
+  70% {
+    clip-path: inset(50px 0px 10px 0px);
+  }
+  100% {
+    clip-path: inset(300px 0px 0px 0px);
+  }
 }

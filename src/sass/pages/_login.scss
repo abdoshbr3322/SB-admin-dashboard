@@ -1,0 +1,17 @@
+form {
+  @media (max-width: 991px) {
+    // max-width: 240px;
+  }
+  .input-pad {
+    padding: 12px 16px !important;
+  }
+  .input-font {
+    color: var(--gray-70) !important;
+  }
+  .input-font, ::placeholder {
+    font-size: 12.8px !important;
+  }
+  ::placeholder {
+    color: var(--gray-60) !important;
+  }
+}

@@ -1,12 +1,13 @@
 mixin primary-heading(content)
   h3.primary-heading= content
 
-mixin brand-btn(brandName, text, display)
-  .btn.text-center.text-white(
-    class='btn-' + brandName,
+mixin brand-btn(brandName, text, display, classes, href)
+  a.btn.text-center.text-white(
+    href=(href || '#'),
+    class=('btn-' + brandName) + ' ' + classes,
     style='display: ' + (display || 'block')
   )
-    i.fab.me-2(class='fa-' + brandName)
+    i.fab.me-2(class='fa-' + (brandName === 'facebook' ? 'facebook-f' : brandName))
     span= text
 
 mixin split-btn(text, iconClass, eClass)

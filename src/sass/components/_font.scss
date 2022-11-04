@@ -30,6 +30,6 @@ $sizes: (
 );
 @each $class, $size in $sizes {
   .fs-#{$class} {
-    font-size: $size;
+    font-size: $size !important;
   }
 }

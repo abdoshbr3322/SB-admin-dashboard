@@ -26,6 +26,8 @@ mixin accordionItem(divider, content, collapseId, iconClass, parentId, collapseI
               href: item.href,
               class: (item.id === childActive ? 'active' : false)
             })= item.content
+
+//- A mixin for sub headings
 mixin subHeading(content)
   h6.sub-heading.text-uppercase.pt-3.m-0.mb-1.text-white-50.fw-bold= content
 
@@ -76,15 +78,18 @@ ul(id='accordion-nav').nav.accordion.flex-direction-column.flex-grow-0.flex-colu
       {type: 'link' ,content: 'Register', href: register, id: 'register'},
       {type: 'link' ,content: 'Forgot Password', href: forgot_password, id: 'forgot_password'},
       {type: 'title' ,content: 'Other pages:'},
-      {type: 'link' ,content: '404 Page', href: error_page, id: 'error_page'},
+      {type: 'link' ,content: '404 Page', href: error_page, id: 'error'},
       {type: 'link' ,content: 'Blank Page', href: blank, id: 'blank'},
     ]
   )
   +navItem(false, 'Charts', 'charts', charts, 'fas fa-fw fa-chart-area')
   +navItem(true, 'Tables', 'tables', tables, 'fas fa-fw fa-table')
+
+  //- create nav toggler arrow
   div.nav-desktop-toggler.mt-3.text-center.d-none.d-md-block
     button: i.fas.fa-angle-left
-  //- hide this upgrade section in all pages except home page
+
+  //- make upgrade section and hide it in all pages except home page
   .upgrade.px-2.py-3.mt-3.rounded.text-center.d-none
     div.rocket.mx-auto.mb-2: img(src= (imgs || './imgs/') + 'undraw_rocket.svg')
     p.text.mb-2.text-white-50.fw-bold SB Admin Pro is packed with premium features, components, and more!
