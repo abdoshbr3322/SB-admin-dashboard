@@ -14,7 +14,7 @@ block paths
     let animations = './animations/';
     let others = './others/';
     let login = './login/';
-    let rigister = './rigister/';
+    let register = './register/';
     let forgot_password = './forgot_password/';
     let error_page = './error/';
     let blank = './blank/';
@@ -23,6 +23,12 @@ block paths
 
 append vars
   - const active = 'home';
+
+append scripts
+  script(src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js")  
+  script(src="./js/area-chart.js")
+  script(src="./js/doughnut-chart.js")
+
 block content
   .d-flex.justify-content-between.align-items-center.mb-3
     +primary-heading('Dashboard')
@@ -183,7 +189,3 @@ block content
             | Custom CSS classes are used to create custom components and custom utility classes.
           p.info.mb-2
             | Before working with this theme, you should become familiar with the Bootstrap framework, especially the utility classes.
-append scripts
-  script(src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js")  
-  script(src="./js/area-chart.js")
-  script(src="./js/doughnut-chart.js")

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Bootstrap Dahsboard | Buttons
+    <title>Bootstrap Dahsboard | Charts
     </title>
   </head>
   <body>
@@ -28,12 +28,12 @@
                       </ul>
                     </div>
                   </li>
-                  <li class="item menu divider"><a class="menu-opener collapsed link fs-md px-0 py-3 d-flex justify-content-between align-items-center active" data-bs-toggle="collapse" href="#utilities"><span><i class="fas fa-fw fa-wrench me-2"></i>  Utilities</span><i class="fas fa-angle-right arrow"></i></a>
+                  <li class="item menu divider"><a class="menu-opener collapsed link fs-md px-0 py-3 d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#utilities"><span><i class="fas fa-fw fa-wrench me-2"></i>  Utilities</span><i class="fas fa-angle-right arrow"></i></a>
                     <div class="nested-menu collapse rounded mb-3" id="utilities" data-bs-parent="#accordion-nav">
                       <ul class="p-2 nav flex-column">
                         <li><span class="d-block py-2 px-3 menu-title fw-bold">Custom Utilities:</span></li>
                         <li><a class="d-block py-2 px-3 rounded menu-link fs-md" href="../colors/">Colors</a></li>
-                        <li><a class="d-block py-2 px-3 rounded menu-link fs-md active" href="#">Borders</a></li>
+                        <li><a class="d-block py-2 px-3 rounded menu-link fs-md" href="../borders/">Borders</a></li>
                         <li><a class="d-block py-2 px-3 rounded menu-link fs-md" href="../animations/">Animations</a></li>
                         <li><a class="d-block py-2 px-3 rounded menu-link fs-md" href="../others/">Others</a></li>
                       </ul>
@@ -53,7 +53,7 @@
                       </ul>
                     </div>
                   </li>
-                  <li class="item"><a class="d-inline-block link fs-md px-0 py-3" href="../charts/"><span><i class="fas fa-fw fa-chart-area me-2"></i>  Charts</span></a></li>
+                  <li class="item"><a class="d-inline-block link fs-md px-0 py-3 active" href="#"><span><i class="fas fa-fw fa-chart-area me-2"></i>  Charts</span></a></li>
                   <li class="item divider"><a class="d-inline-block link fs-md px-0 py-3" href="../tables/"><span><i class="fas fa-fw fa-table me-2"></i>  Tables</span></a></li>
           <div class="nav-desktop-toggler mt-3 text-center d-none d-md-block">
             <button><i class="fas fa-angle-left"></i></button>
@@ -131,58 +131,46 @@
           </header>
           <div class="root p-4">
             <div class="mb-4">
-              <h3 class="primary-heading text-gray-90">Border Utilities</h3>
-              <p class="text-gray-60 mt-2">
-                Bootstrap's default utility classes can be found on the official 
-                <a class="sb-link" href="https://getbootstrap.com/docs">Bootstrap Documentation</a> page.
-                The custom utilities below were created to extend this theme past the default utility classes built into Bootstrap's framework.
+              <h3 class="primary-heading text-gray-90">Charts</h3>
+              <p class="text-gray-60">
+                Chart.js is a third party plugin that is used to generate the charts in this theme. 
+                The charts below have been customized - for further customization options, please visit the 
+                <a class="sb-link" href="https://www.chartjs.org/docs/latest/">official Chart.js documentation.</a>
               </p>
-            </div>
-            <div class="row g-4">
-              <div class="col-lg-6">
-                <div class="card card-sb py-4 mb-4" style="border-left: 4px solid #4e73df !important">
-                  <div class="card-body text-gray-60">.border-left-primary</div>
+              <div class="charts mb-4 row gx-4 gy-4 align-items-start">
+                <div class="col-lg-7">
+                  <div class="card h-100 card-sb shadow-sb mb-4">
+                    <div class="card-header d-flex justify-content-between py-3">
+                      <h6 class="fw-bold text-primary-sb m-0 card-title">Area Chart</h6>
+                    </div>
+                    <div class="card-body">
+                      <canvas id="earnings-chart" style="max-height: 258px; "></canvas>
+                      <hr class="text-gray-60">
+                      <p class="text-gray-60 m-0 fs-md">Styling for the area chart can be found in the <span class="code">../js/area-chart.js</span> file.</p>
+                    </div>
+                  </div>
+                  <div class="card h-100 card-sb shadow-sb">
+                    <div class="card-header d-flex justify-content-between py-3">
+                      <h6 class="fw-bold text-primary-sb m-0 card-title">Bar Chart</h6>
+                    </div>
+                    <div class="card-body">
+                      <canvas id="bar-chart" style="max-height: 300px; "></canvas>
+                      <hr class="text-gray-60">
+                      <p class="text-gray-60 m-0 fs-md">Styling for the area chart can be found in the <span class="code">../js/bar-chart.js</span> file.</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="card card-sb py-4 mb-4" style="border-left: 4px solid #858796 !important">
-                  <div class="card-body text-gray-60">.border-left-secondary</div>
-                </div>
-                <div class="card card-sb py-4 mb-4" style="border-left: 4px solid #1cc88a !important">
-                  <div class="card-body text-gray-60">.border-left-success</div>
-                </div>
-                <div class="card card-sb py-4 mb-4" style="border-left: 4px solid #36b9cc !important">
-                  <div class="card-body text-gray-60">.border-left-info</div>
-                </div>
-                <div class="card card-sb py-4 mb-4" style="border-left: 4px solid #f6c23e !important">
-                  <div class="card-body text-gray-60">.border-left-warning</div>
-                </div>
-                <div class="card card-sb py-4 mb-4" style="border-left: 4px solid #e74a3b !important">
-                  <div class="card-body text-gray-60">.border-left-danger</div>
-                </div>
-                <div class="card card-sb py-4 mb-4" style="border-left: 4px solid #5a5c69 !important">
-                  <div class="card-body text-gray-60">.border-left-dark</div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="card card-sb py-4 mb-4" style="border-bottom: 4px solid #4e73df !important">
-                  <div class="card-body text-gray-60">.border-bottom-primary</div>
-                </div>
-                <div class="card card-sb py-4 mb-4" style="border-bottom: 4px solid #858796 !important">
-                  <div class="card-body text-gray-60">.border-bottom-secondary</div>
-                </div>
-                <div class="card card-sb py-4 mb-4" style="border-bottom: 4px solid #1cc88a !important">
-                  <div class="card-body text-gray-60">.border-bottom-success</div>
-                </div>
-                <div class="card card-sb py-4 mb-4" style="border-bottom: 4px solid #36b9cc !important">
-                  <div class="card-body text-gray-60">.border-bottom-info</div>
-                </div>
-                <div class="card card-sb py-4 mb-4" style="border-bottom: 4px solid #f6c23e !important">
-                  <div class="card-body text-gray-60">.border-bottom-warning</div>
-                </div>
-                <div class="card card-sb py-4 mb-4" style="border-bottom: 4px solid #e74a3b !important">
-                  <div class="card-body text-gray-60">.border-bottom-danger</div>
-                </div>
-                <div class="card card-sb py-4 mb-4" style="border-bottom: 4px solid #5a5c69 !important">
-                  <div class="card-body text-gray-60">.border-bottom-dark</div>
+                <div class="col-lg-5">
+                  <div class="card card-sb shadow-sb">
+                    <div class="card-header d-flex justify-content-between py-3">
+                      <h6 class="fw-bold text-primary-sb m-0 card-title">Donut Chart</h6>
+                    </div>
+                    <div class="card-body">
+                      <canvas id="revenue-chart" style="max-height: 258px"></canvas>
+                      <hr class="text-gray-60">
+                      <p class="text-gray-60 m-0 fs-md">Styling for the donut chart can be found in the <span class="code">../js/doughnut-chart.js</span> file.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -196,5 +184,9 @@
     <div class="scroll-top text-white"><i class="fas fa-angle-up"></i></div>
     <script src="../js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"> </script>
+    <script src="../js/area-chart.js"></script>
+    <script src="../js/doughnut-chart.js"></script>
+    <script src="../js/bar-chart.js"></script>
   </body>
 </html>

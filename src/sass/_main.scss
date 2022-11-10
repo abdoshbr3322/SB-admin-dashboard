@@ -35,6 +35,7 @@ span.code {
 .wrapper > .main {
   background-color: #f8f9fc;
   padding-bottom: 80px !important;
+  min-height: 100vh;
   .cards {
     .card span.number {
       @include text-style(20px, null, #5a5c69);

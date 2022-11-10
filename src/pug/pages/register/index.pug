@@ -1,0 +1,65 @@
+extends ../../login
+
+block pageTitle
+  | Signup | SB Admin Dashboard
+
+append vars
+  - const img = '../imgs/register.jpg'; 
+
+block pageContent
+  h4.form-heading.text-center.fw-normal.text-gray-90.mb-4 Create an Account!
+
+  form
+    .row.mb-3
+      .col
+        input(
+          id='first_name', 
+          type='text',
+          placeholder='First Name'
+        ).form-control.rounded-pill.input-pad
+        
+      .col
+        input(
+          id='last_name', 
+          type='text',
+          placeholder='Last Name'
+        ).form-control.rounded-pill.input-pad
+    
+    .row.mb-3
+      .col
+        input(
+          id='email', 
+          type='email',
+          placeholder='Email Address'
+        ).form-control.rounded-pill.input-pad
+        
+    .row.mb-3
+      .col
+        input(
+          id='password',
+          type='password',
+          placeholder='Password'
+        ).form-control.rounded-pill.input-pad
+
+      .col
+        input(
+          id='password',
+          type='password',
+          placeholder='Repeat Password'
+        ).form-control.rounded-pill.input-pad
+    .row.mb-3
+      .col
+        a(href='../').btn.btn-primary.btn-primary-sb.input-pad.fs-md.rounded-pill.w-100.text-center Register Account
+    hr.mb-3.text-gray-60
+    .row.mb-3
+      .col
+        +brand-btn('google', 'Register With Google', false, 'rounded-pill input-pad fs-md', '../')
+    .row.mb-3
+      .col
+        +brand-btn('facebook', 'Register With Facebook', false, 'rounded-pill input-pad fs-md', '../')
+    hr.mb-3.text-gray-60
+    .text-center
+      a(href='../forgot_password/').sb-link.fs-md Forgot Password?
+    .text-center
+      a(href='../login/').sb-link.fs-md Already have an account? Login!
+

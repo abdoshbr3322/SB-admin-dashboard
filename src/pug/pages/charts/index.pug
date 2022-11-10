@@ -1,0 +1,66 @@
+extends ../../layout
+block pageTitle
+  | Bootstrap Dahsboard | Charts
+block paths
+  -
+    let home = '../';
+    let buttons= '../buttons/';
+    let cards= '../cards/';
+    let colors = '../colors/';
+    let borders = '../borders/';
+    let animations = '../animations/';
+    let others = '../others/';
+    let login = '../login/';
+    let register = '../register/';
+    let forgot_password = '../forgot_password/';
+    let error_page = '../error/';
+    let blank = '../blank/';
+    let charts = '#';
+    let tables = '../tables/';
+    let imgs = '../imgs/';
+    let js = '../js/';
+    let css = '../css/';
+
+append vars
+  - const active = 'charts';
+
+append scripts
+  script(src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js")  
+  script(src="../js/area-chart.js")
+  script(src="../js/doughnut-chart.js")
+  script(src="../js/bar-chart.js")
+
+
+block content
+  .mb-4
+    +primary-heading('Charts')
+    p.text-gray-60
+      | Chart.js is a third party plugin that is used to generate the charts in this theme. 
+      | The charts below have been customized - for further customization options, please visit the 
+      | #[a.sb-link(href='https://www.chartjs.org/docs/latest/') official Chart.js documentation.]
+    .charts.mb-4.row.gx-4.gy-4.align-items-start
+      .col-lg-7
+        .card.h-100.card-sb.shadow-sb.mb-4
+          .card-header.d-flex.justify-content-between.py-3
+            h6.fw-bold.text-primary-sb.m-0.card-title Area Chart
+          .card-body
+            canvas(id='earnings-chart', style="max-height: 258px; ")
+            hr.text-gray-60
+            p.text-gray-60.m-0.fs-md Styling for the area chart can be found in the #[span.code ../js/area-chart.js] file.
+        
+        .card.h-100.card-sb.shadow-sb
+          .card-header.d-flex.justify-content-between.py-3
+            h6.fw-bold.text-primary-sb.m-0.card-title Bar Chart
+          .card-body
+            canvas(id='bar-chart', style="max-height: 300px; ")
+            hr.text-gray-60
+            p.text-gray-60.m-0.fs-md Styling for the area chart can be found in the #[span.code ../js/bar-chart.js] file.
+      .col-lg-5
+        .card.card-sb.shadow-sb
+          .card-header.d-flex.justify-content-between.py-3
+            h6.fw-bold.text-primary-sb.m-0.card-title Donut Chart
+          .card-body
+            canvas(id='revenue-chart' style='max-height: 258px')
+            hr.text-gray-60
+            p.text-gray-60.m-0.fs-md Styling for the donut chart can be found in the #[span.code ../js/doughnut-chart.js] file.
+  

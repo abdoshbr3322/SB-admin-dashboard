@@ -1,0 +1,30 @@
+extends ../../login
+
+block pageTitle
+  | Reset Password | SB Admin Dashboard
+
+append vars
+  - const img = '../imgs/forgot-password.jpg'; 
+
+block pageContent
+  h4.form-heading.text-center.fw-normal.text-gray-90 Forgot Your Password?
+  p.text-gray-60.mb-4.text-center We get it, stuff happens. Just enter your email address below and we'll send you a link to reset your password!
+
+  form
+    .row.mb-3
+      .col
+        input(
+          id='email', 
+          type='email',
+          placeholder='Enter Email Address...'
+        ).form-control.rounded-pill.input-pad
+
+    .row.mb-3
+      .col
+        a(href='../').btn.btn-primary.btn-primary-sb.input-pad.fs-md.rounded-pill.w-100.text-center Reset Password
+    hr.mb-3.text-gray-60
+    .text-center
+      a(href='../register/').sb-link.fs-md Cteate an Account!
+    .text-center
+      a(href='../login/').sb-link.fs-md Already have an account? Login!
+

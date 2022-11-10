@@ -14,10 +14,10 @@ $colors: (
 );
 @each $color in $colors {
   .#{'text-'}#{$color} {
-    color: var(--#{$color});
+    color: var(--#{$color}) !important;
   }
   .#{'bg-'}#{$color} {
-    background-color: var(--#{$color});
+    background-color: var(--#{$color}) !important;
   }
 }
 

@@ -3,7 +3,7 @@ extends ../../login
 block pageTitle
   | Login | SB Admin Dashboard
 
-block vars
+append vars
   - const img = '../imgs/login.jpg'; 
 
 block pageContent
@@ -13,8 +13,8 @@ block pageContent
     .row.mb-3
       .col
         input(
-          id='name', 
-          name='name', 
+          id='email', 
+          type='email',
           placeholder='Enter Email Address...'
         ).form-control.rounded-pill.input-pad
         
@@ -22,8 +22,8 @@ block pageContent
       .col
         input(
           id='password', 
-          name='password', 
-          placeholder='password'
+          type='password',
+          placeholder='Password',
         ).form-control.rounded-pill.input-pad
     .form-check.mb-3
       input(type='checkbox', value='remember', id='remember').form-check-input
@@ -42,5 +42,5 @@ block pageContent
     .text-center
       a(href='../forgot_password/').sb-link.fs-md Forgot Password?
     .text-center
-      a(href='../rigister/').sb-link.fs-md Create An Account!
+      a(href='../register/').sb-link.fs-md Create An Account!
 
