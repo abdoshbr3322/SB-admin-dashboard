@@ -41,8 +41,8 @@ block content
       .card-header.py-3
         h6.fw-bold.text-primary-sb.m-0.card-title DataTables Example
       .card-body.w-100.overflow-auto
-        .d-flex.justify-content-between.mb-3
-          .entries.text-gray-60
+        .d-flex.justify-content-between.align-items-center.mb-3
+          .table-entries.text-gray-60
             | Show
             select.form-select.d-inline-block.w-auto.mx-2
               option(value='10') 10
@@ -50,7 +50,7 @@ block content
               option(value='50') 50
               option(value='100') 100
             | entries
-          .search
+          .table-search
             label.text-gray-60.me-2 Search
             input.form-control.d-inline-block.w-auto
         table.table.table-bordered#data-table
@@ -519,20 +519,22 @@ block content
               td 27
               td 2011/01/25
               td $112,000
-        ul.pagination
-          li.page-item
-            button.page-link.disabled Previos
-          li.page-item
-            button.page-link.active 1
-          li.page-item
-            button.page-link 2
-          li.page-item
-            button.page-link 3
-          li.page-item
-            button.page-link 4
-          li.page-item
-            button.page-link 5
-          li.page-item
-            button.page-link 6
-          li.page-item
-            button.page-link Next
+        .d-flex.justify-content-between.align-items-center.mt-3
+          p.status.text-gray-60 Showing #[span.start-entry 1] to #[span.end-entry 10] of #[span.entries-length 57] entries
+          ul.pagination.table-pagination
+            li.page-item
+              button.page-link.disabled Previos
+            li.page-item.index
+              button.page-link.active 1
+            li.page-item.index
+              button.page-link 2
+            li.page-item.index
+              button.page-link 3
+            li.page-item.index
+              button.page-link 4
+            li.page-item.index
+              button.page-link 5
+            li.page-item.index
+              button.page-link 6
+            li.page-item.index
+              button.page-link Next

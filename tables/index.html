@@ -143,8 +143,8 @@
                   <h6 class="fw-bold text-primary-sb m-0 card-title">DataTables Example</h6>
                 </div>
                 <div class="card-body w-100 overflow-auto">
-                  <div class="d-flex justify-content-between mb-3">
-                    <div class="entries text-gray-60">Show
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="table-entries text-gray-60">Show
                       <select class="form-select d-inline-block w-auto mx-2">
                         <option value="10">10</option>
                         <option value="25">25</option>
@@ -152,7 +152,7 @@
                         <option value="100">100</option>
                       </select>entries
                     </div>
-                    <div class="search">
+                    <div class="table-search">
                       <label class="text-gray-60 me-2">Search</label>
                       <input class="form-control d-inline-block w-auto">
                     </div>
@@ -627,32 +627,35 @@
                       </tr>
                     </tbody>
                   </table>
-                  <ul class="pagination">
-                    <li class="page-item">
-                      <button class="page-link disabled">Previos</button>
-                    </li>
-                    <li class="page-item">
-                      <button class="page-link active">1</button>
-                    </li>
-                    <li class="page-item">
-                      <button class="page-link">2</button>
-                    </li>
-                    <li class="page-item">
-                      <button class="page-link">3</button>
-                    </li>
-                    <li class="page-item">
-                      <button class="page-link">4</button>
-                    </li>
-                    <li class="page-item">
-                      <button class="page-link">5</button>
-                    </li>
-                    <li class="page-item">
-                      <button class="page-link">6</button>
-                    </li>
-                    <li class="page-item">
-                      <button class="page-link">Next</button>
-                    </li>
-                  </ul>
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                    <p class="status text-gray-60">Showing <span class="start-entry">1</span> to <span class="end-entry">10</span> of <span class="entries-length">57</span> entries</p>
+                    <ul class="pagination table-pagination">
+                      <li class="page-item">
+                        <button class="page-link disabled">Previos</button>
+                      </li>
+                      <li class="page-item index">
+                        <button class="page-link active">1</button>
+                      </li>
+                      <li class="page-item index">
+                        <button class="page-link">2</button>
+                      </li>
+                      <li class="page-item index">
+                        <button class="page-link">3</button>
+                      </li>
+                      <li class="page-item index">
+                        <button class="page-link">4</button>
+                      </li>
+                      <li class="page-item index">
+                        <button class="page-link">5</button>
+                      </li>
+                      <li class="page-item index">
+                        <button class="page-link">6</button>
+                      </li>
+                      <li class="page-item index">
+                        <button class="page-link">Next</button>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
