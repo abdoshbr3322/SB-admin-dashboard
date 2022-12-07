@@ -4,10 +4,30 @@ class Table {
   #matchedRows;
   #pageIndex;
   #pagesLength;
+  
+  static createPageItem(index) {
+    // create elements
+    let pageItem = document.createElement("li");
+    let pageLink = document.createElement("button");
+
+    // add classes and attributes
+    pageItem.classList.add("page-item");
+    pageItem.classList.add("index");
+    pageItem.classList.add(`page-${index + 1}`);
+    pageItem.setAttribute("data-index", index);
+
+    pageLink.classList.add("page-link");
+
+    // add content
+    pageLink.textContent = index + 1;
+    pageItem.appendChild(pageLink);
+
+    return pageItem;
+  }
 
   constructor(table) {
     this.tableRows = Array.from(table.querySelectorAll("tbody tr"));
-    
+
     // assign values to start entry, page index and, matched rows
     this.#startEntry = 0;
     this.#pageIndex = 0;
@@ -24,8 +44,7 @@ class Table {
     // handle input change and entries max count and pages
     this.filterEntries(entriesSelector.value);
     entriesSelector.onchange = (e) => this.filterEntries(e.target.value);
-    searchInput.oninput = (e) =>
-      this.filterSearch(e.target.value.split(" "));
+    searchInput.oninput = (e) => this.filterSearch(e.target.value.split(" "));
     Array.from(pagination.children).forEach((pageItem) => {
       pageItem.addEventListener("click", (e) => {
         this.filterPage(pageItem);
@@ -61,41 +80,29 @@ class Table {
     }
   }
 
-  static createPageItem(index) {
-    // create elements
-    let pageItem = document.createElement("li");
-    let pageLink = document.createElement("button");
-
-    // add classes and attributes
-    pageItem.classList.add("page-item");
-    pageItem.classList.add("index");
-    pageItem.classList.add(`page-${index + 1}`);
-    pageItem.setAttribute("data-index", index);
-
-    pageLink.classList.add("page-link");
-
-    // add content
-    pageLink.textContent = index + 1;
-    pageItem.appendChild(pageLink);
-
-    return pageItem;
-  }
-
   styleBtns() {
     // previos button
-    let previousBtn = document.querySelector(".page-item.previous button")
-    let nextBtn = document.querySelector(".page-item.next button")
-    this.#pageIndex > 0 ? previousBtn.classList.remove('disabled') : previousBtn.classList.add('disabled');
-    this.#pageIndex < (this.#pagesLength - 1) ? nextBtn.classList.remove('disabled') : nextBtn.classList.add('disabled');
-    
+    let previousBtn = document.querySelector(".page-item.previous button");
+    // next button
+    let nextBtn = document.querySelector(".page-item.next button");
+    // control classess
+    this.#pageIndex > 0
+      ? previousBtn.classList.remove("disabled")
+      : previousBtn.classList.add("disabled");
+    this.#pageIndex < this.#pagesLength - 1
+      ? nextBtn.classList.remove("disabled")
+      : nextBtn.classList.add("disabled");
+
     // remove active class from all btns
-    let btns = document.querySelectorAll('.page-item.index');
+    let btns = document.querySelectorAll(".page-item.index");
     btns.forEach((btn) => {
-      btn.classList.remove('active');
-    })
+      btn.classList.remove("active");
+    });
 
     // add active class on the current btn
-    document.querySelector(`.page-item.index.page-${this.#pageIndex + 1}`).classList.add('active')
+    document
+      .querySelector(`.page-item.index.page-${this.#pageIndex + 1}`)
+      .classList.add("active");
   }
 
   filterEntries(entries) {
@@ -106,9 +113,15 @@ class Table {
   filterPage(targetBtn) {
     if (targetBtn.classList.contains("index")) {
       this.#pageIndex = parseInt(targetBtn.dataset.index);
-    } else if (targetBtn.classList.contains("next") &&  this.#pageIndex < (this.#pagesLength - 1)) {
+    } else if (
+      targetBtn.classList.contains("next") &&
+      this.#pageIndex < this.#pagesLength - 1
+    ) {
       this.#pageIndex++;
-    } else if (targetBtn.classList.contains("previous") &&  this.#pageIndex > 0) {
+    } else if (
+      targetBtn.classList.contains("previous") &&
+      this.#pageIndex > 0
+    ) {
       this.#pageIndex--;
     }
     this.styleBtns();

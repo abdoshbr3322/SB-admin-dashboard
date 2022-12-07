@@ -26,7 +26,7 @@ append vars
 
 append scripts
   script(src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js")  
-  script(src="./js/area-chart.js")
+  script(src="./js/area-chart.js", type='module')
   script(src="./js/doughnut-chart.js")
 
 block content
@@ -37,7 +37,7 @@ block content
     .col-md-6.col-xl-3
       .card.border-primary-sb.shadow-sb.p-4(style='border: none; border-left: 4px solid')
         .card-body.p-0.d-flex.justify-content-between.align-items-center
-          .info
+          .text-gray-60
             span.title.fs-xsm.d-block.text-primary-sb.text-uppercase.fw-bold EARNINGS (MONTHLY)
             span.number.d-block.fw-bold $40,000
           .icon
@@ -45,7 +45,7 @@ block content
     .col-md-6.col-xl-3
       .card.border-success.shadow-sb.p-4(style='border: none; border-left: 4px solid')
         .card-body.p-0.d-flex.justify-content-between.align-items-center
-          .info
+          .text-gray-60
             span.title.fs-xsm.d-block.text-success.text-uppercase.fw-bold EARNINGS (ANNUAL)
             span.number.d-block.fw-bold $215,000
           .icon
@@ -53,7 +53,7 @@ block content
     .col-md-6.col-xl-3
       .card.border-info.shadow-sb.p-4(style='border: none; border-left: 4px solid')
         .card-body.p-0.d-flex.align-items-center
-          .info
+          .text-gray-60
             span.title.fs-xsm.d-block.text-info.text-uppercase.fw-bold Tasks
             span.number.d-block.fw-bold 50%
           .progress.mx-3.flex-grow-1(style='height: 9px;')
@@ -69,7 +69,7 @@ block content
     .col-md-6.col-xl-3
       .card.border-warning.shadow-sb.p-4(style='border: none; border-left: 4px solid')
         .card-body.p-0.d-flex.justify-content-between.align-items-center
-          .info
+          .text-gray-60
             span.title.fs-xsm.d-block.text-warning.text-uppercase.fw-bold Pending Requests
             span.number.d-block.fw-bold 18
           .icon
@@ -77,7 +77,7 @@ block content
   .charts.mb-4.row.gx-4.gy-4
     .col-lg-7
       .card.h-100.card-sb.shadow-sb
-        .card-header.d-flex.justify-content-between.py-3
+        .card-header.d-flex.align-items-center.justify-content-between.py-3
           h6.fw-bold.text-primary-sb.m-0.card-title Earnings Overview
           .dropdown
             button(data-bs-toggle='dropdown').bg-transparent.text-gray-50: i.fas.fa-ellipsis-v
@@ -91,7 +91,7 @@ block content
           canvas(id='earnings-chart', height='258', style="max-height: 258px; ")
     .col-lg-5
       .card.card-sb.shadow-sb
-        .card-header.d-flex.justify-content-between.py-3
+        .card-header.d-flex.align-items-center.justify-content-between.py-3
           h6.fw-bold.text-primary-sb.m-0.card-title Revenue Source
           .dropdown
             button(data-bs-toggle='dropdown').bg-transparent.text-gray-50: i.fas.fa-ellipsis-v
@@ -121,31 +121,31 @@ block content
           h6.fw-bold.text-primary-sb.m-0.card-title Projects
         .card-body
           .project.mb-3
-            .info.mb-2.fs-sm.fw-bold.d-flex.align-items-center.justify-content-between
+            .text-gray-60.mb-2.fs-sm.fw-bold.d-flex.align-items-center.justify-content-between
               span.title Server Migration
               span.progress-info 20%
             .progress
               .progress-bar.bg-danger(style="width: 20%;")
           .project.mb-3
-            .info.mb-2.fs-sm.fw-bold.d-flex.align-items-center.justify-content-between
+            .text-gray-60.mb-2.fs-sm.fw-bold.d-flex.align-items-center.justify-content-between
               span.title Sales Tracking
               span.progress-info 40%
             .progress
               .progress-bar.bg-warning(style="width: 40%;")
           .project.mb-3
-            .info.mb-2.fs-sm.fw-bold.d-flex.align-items-center.justify-content-between
+            .text-gray-60.mb-2.fs-sm.fw-bold.d-flex.align-items-center.justify-content-between
               span.title Customer Database
               span.progress-info 60%
             .progress
               .progress-bar.bg-primary(style="width: 60%;")
           .project.mb-3
-            .info.mb-2.fs-sm.fw-bold.d-flex.align-items-center.justify-content-between
+            .text-gray-60.mb-2.fs-sm.fw-bold.d-flex.align-items-center.justify-content-between
               span.title Payout Details
               span.progress-info 80%
             .progress
               .progress-bar.bg-info(style="width: 80%;")
           .project.mb-3
-            .info.mb-2.fs-sm.fw-bold.d-flex.align-items-center.justify-content-between
+            .text-gray-60.mb-2.fs-sm.fw-bold.d-flex.align-items-center.justify-content-between
               span.title Account Setup
               span.progress-info Complete!
             .progress
@@ -175,8 +175,8 @@ block content
         .card-body.py-4.px-4
           .image.mb-3.px-3.d-flex.justify-content-center
             img(src='./imgs/undraw_posting_photo.svg')
-          p.info.mb-2
-            | Add some quality, svg illustrations to your project courtesy of #[a(href='#') unDraw],
+          p.text-gray-60.mb-2
+            | Add some quality, svg illustrations to your project courtesy of #[a.sb-link(href='#') unDraw],
             | a constantly updated collection of beautiful svg images that you can use completely free and without attribution!
           a.sb-link.undraw.d-inline-block(href='#') Browse Illustrations on unDraw #[i.fas.fa-arrow-right-long.fs-xsm]
     
@@ -184,8 +184,8 @@ block content
         .card-header.py-3
           h6.fw-bold.text-primary-sb.m-0.card-title Development Approach
         .card-body.py-4.px-4
-          p.info.mb-2
+          p.text-gray-60.mb-2
             | SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce CSS bloat and poor page performance.
             | Custom CSS classes are used to create custom components and custom utility classes.
-          p.info.mb-2
+          p.text-gray-60.mb-2
             | Before working with this theme, you should become familiar with the Bootstrap framework, especially the utility classes.

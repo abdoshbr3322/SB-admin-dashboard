@@ -1,7 +1,7 @@
 //- A mixin for creating nav items
 mixin navItem(divider, content, id, link, iconClass)
   li&attributes({class: divider ? 'divider' : false}).item
-    a.d-inline-block.link.fs-md.px-0.py-3&attributes({href: link, class: (id === active ? 'active' : false)})
+    a.link.d-block.fs-md.px-0.py-3&attributes({href: link, class: (id === active ? 'active' : false)})
       span #[i(class=iconClass).me-2]  #{content}
 
 //- A mixin for creating accordion nav items
@@ -13,7 +13,7 @@ mixin accordionItem(divider, content, collapseId, iconClass, parentId, collapseI
       'data-bs-toggle': 'collapse',
       'href': '#' + collapseId,
       'class': (collapseId === parentActive ? 'active' : false)
-      }).menu-opener.collapsed.link.fs-md.px-0.py-3.d-flex.justify-content-between.align-items-center
+      }).link.menu-opener.collapsed.fs-md.px-0.py-3.d-flex.justify-content-between.align-items-center
       span #[i(class=iconClass).me-2]  #{content}
       i.fas.fa-angle-right.arrow
     div(id=collapseId, data-bs-parent='#' + parentId).nested-menu.collapse.rounded.mb-3

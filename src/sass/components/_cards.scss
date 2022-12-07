@@ -8,11 +8,9 @@
   &,
   .card-header {
     border-color: var(--sb-border-color) !important;
+    // align-items: center;
   }
   .card-header {
     background-color: #f8f9fc;
-  }
-  .info {
-    color: var(--gray-60);
   }
 }

@@ -94,9 +94,6 @@ button {
 .card-sb .card-header {
   background-color: #f8f9fc;
 }
-.card-sb .info {
-  color: var(--gray-60);
-}
 
 .bg-gradient-primary {
   background-image: var(--gradient-primary);
@@ -700,8 +697,8 @@ a.sb-link:hover {
 .wrapper > .nav.closed li.item.menu .nested-menu {
   box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
   position: absolute;
-  left: calc(100% + 20px) !important;
   top: 0;
+  left: calc(100% + 20px) !important;
   height: auto !important;
   transform: scale(0);
   text-align: start;
@@ -725,7 +722,7 @@ a.sb-link:hover {
   font-size: 15.6px;
 }
 .wrapper > .nav.closed li.item .link {
-  font-size: 11px;
+  font-size: 11.2px !important;
 }
 .wrapper > .nav .sub-heading {
   font-size: 10px;

@@ -15,10 +15,8 @@
       display: none;
     }
   }
-  .logo {
-    i {
-      transform: rotate(-20deg);
-    }
+  .logo i {
+    transform: rotate(-20deg);
   }
   &.closed .logo {
     padding: 14px 0;
@@ -78,9 +76,7 @@
     }
     &.menu .nested-menu {
       box-shadow: 0 0.15rem 1.75rem 0 rgb(58 59 69 / 15%);
-      position: absolute;
-      left: calc(100% + 20px) !important;
-      top: 0;
+      @include position-style(absolute, 0, calc(100% + 20px) !important);
       height: auto !important;
       transform: scale(0);
       text-align: start;
@@ -102,7 +98,7 @@
       font-size: 15.6px;
     }
     .link {
-      font-size: 11px;
+      font-size: 11.2px !important;
     }
   }
 

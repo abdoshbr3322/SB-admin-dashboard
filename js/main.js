@@ -27,7 +27,7 @@ window.addEventListener("resize", toggleMobileNav);
 toggleMobileNav();
 
 function toggleMobileNav() {
-  if (window.innerWidth <= 767) {
+  if (window.innerWidth <= 850) {
     nav.classList.add("closed");
   }
   // hide nav on small screens

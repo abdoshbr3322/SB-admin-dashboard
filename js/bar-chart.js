@@ -1,9 +1,11 @@
+import { earningsTooltip } from "./charts.js";
+
 const barLabels = ["January", "February", "March", "April", "May", "June"];
 const barData = {
   labels: barLabels,
   datasets: [
     {
-      label: "My First Dataset",
+      label: "Earnings",
       data: [4500, 5500, 6000, 8000, 10000, 15000],
       backgroundColor: "rgb(78, 115, 223)",
       borderColor: "rgba(78, 115, 223, 1)",
@@ -53,6 +55,7 @@ const barConfig = {
       legend: {
         display: false,
       },
+      tooltip: earningsTooltip,
     },
   },
 };

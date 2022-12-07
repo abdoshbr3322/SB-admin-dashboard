@@ -1,5 +1,5 @@
-table#data-table, table#table * {
-  border-color: var(--gray-20) !important;
+.wrapper .main {
+  overflow-x: hidden;
 }
 
 /*# sourceMappingURL=tables.css.map */
